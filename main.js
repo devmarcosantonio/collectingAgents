@@ -1,4 +1,5 @@
-import AgenteReativoSimples from "./Agentes/AgenteReativoSimples";
+import AgenteReativoSimples from "./Agentes/AgenteReativoSimples.js";
+import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal} from './config.js';
 
 function define_quare () {
     const points = [0, 0, 0, 1, 3]; 
@@ -12,7 +13,7 @@ function create_environment (environment) {
         let row = [];
         for (let j = 0; j < MAX_COLUMN; j++) {
             let square_state = define_quare();
-            lixo_total += square_state;
+            setLixoTotal(getLixoTotal() + square_state);
             row.push(square_state);
 
             const square_html = document.createElement('div');
@@ -31,23 +32,15 @@ function create_environment (environment) {
     }
 }
 
-
-// Global Scope
-const MAX_ROW = 10;
-const MAX_COLUMN = 10;
-const environment = []; // matriz que representará o ambiente;
-let lixo_total = 0;
-
 function main () {
     create_environment(environment);
 
     const agenteSimples = new AgenteReativoSimples(0, 0, 'red')
 
     function executarAgentes() {
-        agenteSimples.agir();
+        agenteSimples.agir(environment);
 
-
-        if (lixo_total <= 0) {
+        if (getLixoTotal() <= 0) {
             clearInterval(intervalId);
         }
     }

@@ -1,4 +1,5 @@
-import Agente from 'Agente.js';
+import Agente from './Agente.js';
+import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal} from '../config.js';
 
 class AgenteReativoSimples extends Agente {
     constructor(posX, posY, color) {
@@ -10,10 +11,10 @@ class AgenteReativoSimples extends Agente {
 
         if (estado_posicao_atual === 1 || estado_posicao_atual === 3) {
             if (estado_posicao_atual === 1) {
-                lixo_total --;
+                setLixoTotal(getLixoTotal() - 1)
                 this.score ++;
             } else {
-                lixo_total -= 3;
+                setLixoTotal(getLixoTotal() - 3)
                 this.score += 3;
             }
             document.getElementById('score').innerText = `SCORE: ${this.score}`;
@@ -37,7 +38,7 @@ class AgenteReativoSimples extends Agente {
         } 
         else {
             const acoesPossiveis = [];
-            
+
             if (vizinhos.top !== undefined) {
                 acoesPossiveis.push(() => this.move('t'));
             }

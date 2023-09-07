@@ -1,4 +1,10 @@
 import Agente from "./Agente";
+import {
+    MAX_ROW,
+    MAX_COLUMN,
+    environment,
+    lixo_total
+} from './Escopo.js'
 
 class AgenteComEstadosModelos extends Agente {
     constructor (posX, posY, color) {

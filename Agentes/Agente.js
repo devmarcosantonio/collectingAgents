@@ -1,3 +1,5 @@
+import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal}from '../config.js';
+
 class Agente {
     constructor(posX, posY, color) {
         this.posX = posX;
