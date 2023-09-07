@@ -212,7 +212,6 @@ function main () {
     create_environment(environment);
 
     const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
-    const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
 
     function executarAgentes() {
         agenteSimples.agir();
