@@ -211,7 +211,7 @@ let lixo_total = 0;
 function main () {
     create_environment(environment);
 
-    const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
+    const agenteSimples = new AgenteReativoSimples(0, 0, 'red')
 
     function executarAgentes() {
         agenteSimples.agir();
