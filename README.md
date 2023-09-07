@@ -2,6 +2,7 @@
 Este projeto está sendo feito para disciplina de Inteligência Artificial de minha graduação.
 FIZ utilizando HTML, CSS e JAVASCRIPT.
 
+
 Atividade:
   Implemente 4 agentes racionais, cada um seguindo uma das arquiteturas vistas em aula:
     • Agente reativo simples (implementado);
@@ -23,14 +24,11 @@ Atividade:
     • Conteúdo do local; 
     • Conteúdo da Vizinhança-4. (cima, baixo, esquerda e direita).
     
-  O ambiente deve ter as dimensões 20x20. (o meu código independe disso)
   O ambiente deve possuir dois tipos distintos de itens:
     • Item do tipo 1: o agente recebe 1 pontos;
     • Item do tipo 2: o agente recebe 3 pontos.
     
-  Devem ser colocados aleatoriamente 10 itens de cada tipo no ambiente.
   A medida de desempenho dos agentes será a pontuação total de acordo com os itens coletados.
   Deve-se inserir dois agentes por vez no ambiente para um confronto, onde quem somar mais 
   pontos vence.
-  O primeiro agente deve estar em (1, 1) e o segundo em (1, 20).
   Deve-se repetir as simulações até que todos os agentes tenham se enfrentado.
