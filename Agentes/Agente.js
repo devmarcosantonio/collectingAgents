@@ -1,4 +1,4 @@
-import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal}from '../config.js';
+import { MAX_ROW, MAX_COLUMN, environment } from '../config.js';
 
 class Agente {
     constructor(posX, posY, color) {
@@ -6,7 +6,7 @@ class Agente {
         this.posY = posY;
         this.score = 0;
         this.agentColor = color;
-        document.getElementById(`${posX}${posY}`).style.backgroundColor = color;
+        document.getElementById(`${posX}-${posY}`).style.backgroundColor = color;
     }
 
     percepcao() {
@@ -34,24 +34,25 @@ class Agente {
 
     move (direcao) {
         if (direcao === 't') {
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = 'white'
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = 'white'
             this.posY --   
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = this.agentColor;
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = this.agentColor;
+
         }
         else if (direcao === 'b') {
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = 'white'
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = 'white'
             this.posY ++;
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = this.agentColor;
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = this.agentColor;
         }
         else if (direcao === 'l') {
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = 'white'
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = 'white'
             this.posX --;
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = this.agentColor;
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = this.agentColor;
         }
         else if (direcao === 'r') {
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = 'white'
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = 'white'
             this.posX ++;
-            document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = this.agentColor;
+            document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = this.agentColor;
         }
     }
 

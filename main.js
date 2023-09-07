@@ -24,7 +24,7 @@ function create_environment (environment) {
                 square_html.innerText = '3';
             }
 
-            square_html.id = i.toString() + j.toString(); //ij
+            square_html.id = i.toString() +'-'+ j.toString(); //ij
             square_html.className = 'square';
             environment_html.appendChild(square_html);
         }
@@ -38,7 +38,7 @@ function main () {
     const agenteSimples = new AgenteReativoSimples(0, 0, 'red')
 
     function executarAgentes() {
-        agenteSimples.agir(environment);
+        agenteSimples.agir();
 
         if (getLixoTotal() <= 0) {
             clearInterval(intervalId);

@@ -19,9 +19,8 @@ class AgenteReativoSimples extends Agente {
             }
             document.getElementById('score').innerText = `SCORE: ${this.score}`;
             environment[this.posX][this.posY] = 0;
-            const posicao_visual = document.getElementById(`${this.posX}${this.posY}`)
+            const posicao_visual = document.getElementById(`${this.posX}-${this.posY}`)
             posicao_visual.innerText = '';
-            console.log('limpa!')
         } 
 
         else if (vizinhos.top === 1 || vizinhos.top === 3) {
