@@ -3,10 +3,10 @@ Este projeto está sendo feito para disciplina de Inteligência Artificial de mi
 
 Atividade:
   Implemente 4 agentes racionais, cada um seguindo uma das arquiteturas vistas em aula:
-    • Agente reativo simples (implementado)
-    • Agente com estados/modelos (sendo implementado)
-    • Agente com objetivos
-    • Agente de utilidade 
+• Agente reativo simples (implementado)
+• Agente com estados/modelos (sendo implementado)
+• Agente com objetivos
+• Agente de utilidade 
     
   Os agentes têm como objetivo coletar itens espalhados pelo ambiente.
   Os agentes podem executar as seguintes ações: 
