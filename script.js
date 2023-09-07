@@ -44,8 +44,8 @@ class Agente {
         this.posY = posY;
         this.score = 0;
         this.agentColor = color;
-        
-        document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = color
+        document.getElementById(`${posX}${posY}`).style.backgroundColor = color;
+    
     }
 
     percepcao() {
@@ -93,24 +93,13 @@ class Agente {
             document.getElementById(`${this.posX}${this.posY}`).style.backgroundColor = this.agentColor;
         }
     }
-    
-    
-    executar() {
-        const intervalId = setInterval(() => {
-            if (lixo_total > 0) {
-                this.agir();
-            } else {
-                clearInterval(intervalId); // Para o loop quando todo o lixo for coletado
-            }
-            console.log('x:', this.posX, ', y:', this.posY)
-        }, 1000);
-    }
-    
+
 }
 
 class AgenteReativoSimples extends Agente {
     constructor(posX, posY, color) {
         super(posX, posY, color);
+        
     }
 
     agir() {
@@ -170,10 +159,37 @@ class AgenteReativoSimples extends Agente {
 }
 
 
-/*
 class AgenteComEstadosModelos extends Agente {
     constructor (posX, posY, color) {
         super(posX, posY, color);
+    
+
+        this.ambiente_interno = this.criarModelo()
+        const {vizinhos} = this.percepcao();
+        if (vizinhos.top !== undefined && vizinhos.top !== 0) {
+            this.ambiente_interno[this.posX][this.posY-1] = vizinhos.top;
+        }
+        if (vizinhos.bottom !== undefined && vizinhos.bottom !== 0) {
+            this.ambiente_interno[this.posX][this.posY+1] = vizinhos.bottom;
+        }
+        if (vizinhos.left !== undefined && vizinhos.left !== 0) {
+            this.ambiente_interno[this.posX-1][this.posY] = vizinhos.left;
+        }
+        if (vizinhos.right !== undefined && vizinhos.right !== 0) {
+            this.ambiente_interno[this.posX+1][this.posY] = vizinhos.right;
+        }
+    }
+
+    criarModelo () {
+        const modelo = [];
+        for (let i = 0; i < MAX_ROW; i++) {
+            const row = [];
+            for (let j = 0; j < MAX_COLUMN; j++) {
+                row.push(0);
+            }
+            modelo.push(row);
+        }
+        return modelo;
     }
 }
 
@@ -188,24 +204,26 @@ class AgenteDeUtilidade extends Agente {
         super(posX, posY);
     }
 }
-
-*/
-
-
 // Global Scope
 const environment = []; // matriz que representará o ambiente;
 let lixo_total = 0;
 
-
 function main () {
-    // Criando o ambiente
     create_environment(environment);
 
-    // Criando o agente reativo simples
-    const agenteSimples = new AgenteReativoSimples(0, 0, 'red'); // Inicializa o agente na posição (0, 0)
-    agenteSimples.executar()
+    const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
+    const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
+
+    function executarAgentes() {
+        agenteSimples.agir();
+
+
+        if (lixo_total <= 0) {
+            clearInterval(intervalId);
+        }
+    }
+
+    const intervalId = setInterval(executarAgentes, 1000);
 }
 
-main();
-
-
+main()
