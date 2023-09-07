@@ -1,5 +1,5 @@
 import Agente from './Agente.js';
-import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal} from '../config.js';
+import { environment, setLixoTotal, getLixoTotal} from '../config.js';
 
 class AgenteReativoSimples extends Agente {
     constructor(posX, posY, color) {

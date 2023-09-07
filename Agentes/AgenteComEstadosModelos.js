@@ -1,5 +1,5 @@
 import Agente from "./Agente";
-
+import { environment, setLixoTotal, getLixoTotal} from '../config.js';
 
 class AgenteComEstadosModelos extends Agente {
     constructor (posX, posY, color) {
