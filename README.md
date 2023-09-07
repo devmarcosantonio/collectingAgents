@@ -2,6 +2,7 @@
 Este projeto está sendo feito para disciplina de Inteligência Artificial de minha graduação.
 FIZ utilizando HTML, CSS e JAVASCRIPT.
 
+Visite a implementação hospedada com github Pages: https://devmarcosantonio.github.io/collectingAgents/
 
 Atividade:
   Implemente 4 agentes racionais, cada um seguindo uma das arquiteturas vistas em aula:
