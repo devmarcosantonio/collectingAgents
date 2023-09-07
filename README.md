@@ -1,5 +1,6 @@
 # -collectingAgents
 Este projeto está sendo feito para disciplina de Inteligência Artificial de minha graduação.
+FIZ utilizando HTML, CSS e JAVASCRIPT.
 
 Atividade:
   Implemente 4 agentes racionais, cada um seguindo uma das arquiteturas vistas em aula:
