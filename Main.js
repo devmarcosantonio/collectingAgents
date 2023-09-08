@@ -48,7 +48,7 @@ function main () {
         }
     }
 
-    const intervalId = setInterval(executarAgentes, 10);
+    const intervalId = setInterval(executarAgentes, 1000);
 }
 
 main()
