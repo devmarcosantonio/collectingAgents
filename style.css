@@ -9,16 +9,17 @@ h1 {
 
 #container {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 50px;
     width: 60%;
     margin: auto;
 }
 
 #environment {
     display: grid;
-    grid-template-columns: repeat(20, 1fr);
-    grid-template-rows: repeat(20, 25px);
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(10, 40px);
     gap: 3px;
     width: 100%;
 }
@@ -33,3 +34,30 @@ h1 {
     font-weight: bolder;
 }
 
+#scoreboard {
+    background-color: white;
+    padding: 5px;
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border-radius: 5px;
+}
+
+.score {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+
+#score-agente-simples::before {
+    content: "Agente reativo simples";
+    font-size: 15px;
+    display: block;
+}
+
+#score-agente-modelo::before {
+    content: "Agente baseado em modelo";
+    font-size: 15px;
+    display: block;
+}

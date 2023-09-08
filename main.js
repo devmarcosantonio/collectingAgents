@@ -1,4 +1,5 @@
 import AgenteReativoSimples from "./Agentes/AgenteReativoSimples.js";
+import AgenteComEstadosModelos from "./Agentes/AgenteComEstadosModelos.js";
 import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal} from './config.js';
 
 function define_quare () {
@@ -35,17 +36,19 @@ function create_environment (environment) {
 function main () {
     create_environment(environment);
 
-    const agenteSimples = new AgenteReativoSimples(0, 0, 'red')
+    const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
+    const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
 
     function executarAgentes() {
         agenteSimples.agir();
+        agenteModelo.agir();
 
         if (getLixoTotal() <= 0) {
             clearInterval(intervalId);
         }
     }
 
-    const intervalId = setInterval(executarAgentes, 1000);
+    const intervalId = setInterval(executarAgentes, 10);
 }
 
 main()

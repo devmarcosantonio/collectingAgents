@@ -1,5 +1,5 @@
-const MAX_ROW = 20;
-const MAX_COLUMN = 20;
+const MAX_ROW = 10;
+const MAX_COLUMN = 10;
 const environment = []; // matriz que representará o ambiente;
 let lixo_total = 0;
 

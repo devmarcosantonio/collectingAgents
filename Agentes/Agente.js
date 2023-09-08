@@ -6,7 +6,7 @@ class Agente {
         this.posY = posY;
         this.score = 0;
         this.agentColor = color;
-        document.getElementById(`${posX}-${posY}`).style.backgroundColor = color;
+        document.getElementById(`${posX}-${posY}`).style.backgroundColor = this.agentColor;
     }
 
     percepcao() {

@@ -4,6 +4,8 @@ import { environment, setLixoTotal, getLixoTotal} from '../config.js';
 class AgenteReativoSimples extends Agente {
     constructor(posX, posY, color) {
         super(posX, posY, color);
+        this.id_score_html = 'score-agente-simples'
+        document.getElementById(this.id_score_html).style.color = color;
     }
 
     agir() {
@@ -17,7 +19,7 @@ class AgenteReativoSimples extends Agente {
                 setLixoTotal(getLixoTotal() - 3)
                 this.score += 3;
             }
-            document.getElementById('score').innerText = `SCORE: ${this.score}`;
+            document.getElementById(this.id_score_html).innerText = `SCORE: ${this.score}`;
             environment[this.posX][this.posY] = 0;
             const posicao_visual = document.getElementById(`${this.posX}-${this.posY}`)
             posicao_visual.innerText = '';
