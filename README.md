@@ -7,9 +7,9 @@ Visite a implementação hospedada com github Pages: https://devmarcosantonio.gi
 Atividade:
   Implemente 4 agentes racionais, cada um seguindo uma das arquiteturas vistas em aula:
     • Agente reativo simples (implementado);
-    • Agente com estados/modelos (sendo implementado);
-    • Agente com objetivos; 
-    • Agente de utilidade.
+    • Agente com estados/modelos (implementado);
+    • Agente com objetivos; (implementado) [em revisão]
+    • Agente de utilidade. (implementado) [em revisão]
     
   Os agentes têm como objetivo coletar itens espalhados pelo ambiente.
   Os agentes podem executar as seguintes ações: 
