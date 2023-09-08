@@ -1,6 +1,7 @@
 import AgenteReativoSimples from "./Agentes/AgenteReativoSimples.js";
 import AgenteComEstadosModelos from "./Agentes/AgenteComEstadosModelos.js";
 import AgenteComObjetivo from "./Agentes/AgenteComObjetivos.js";
+import Player from "./Agentes/Player.js"; 
 
 import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal} from './config.js';
 import AgenteDeUltilidade from "./Agentes/AgenteDeUltilidade.js";
@@ -41,17 +42,41 @@ function create_environment (environment) {
 function main () {
     create_environment(environment);
 
-    const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
-    const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
-    const agenteObjetivo = new AgenteComObjetivo(9, 0, 'green');
-    const agenteUltilidade = new AgenteDeUltilidade(9, 9, 'orange')
+    // const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
+    // const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
+    // const agenteObjetivo = new AgenteComObjetivo(9, 0, 'green');
+    // const agenteUltilidade = new AgenteDeUltilidade(9, 9, 'orange')
+    const player = new Player(4, 4, 'yellow')
 
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "a") {
+            player.moveTop()
+            event.preventDefault();
+        }
+        if (event.key === "s") {
+            player.moveRight()
+            event.preventDefault();
+        }
+        if (event.key === "d") {
+            player.moveBottom()
+            event.preventDefault();
+        }
+        if (event.key === "w") {
+            player.moveLeft()
+            event.preventDefault();
+        }
+        if (event.key === " ") {
+            player.player_limpar();
+            event.preventDefault()
+        }
+        console.log(player.posX, '-', player.posY)
+    });
     
     function executarAgentes() {
-        agenteSimples.agir();
-        agenteModelo.agir();
-        agenteObjetivo.agir()
-        agenteUltilidade.agir()
+        // agenteSimples.agir();
+        // agenteModelo.agir();
+        // agenteObjetivo.agir()
+        // agenteUltilidade.agir()
     
 
         if (getLixoTotal() <= 0) {
@@ -65,3 +90,5 @@ function main () {
 }
 
 main()
+
+// player config

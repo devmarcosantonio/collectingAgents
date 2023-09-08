@@ -58,21 +58,24 @@ class Agente {
     }
 
     limpar (point) {
+    
         if (point === 1) {
             setLixoTotal(getLixoTotal() - 1)
             this.score ++;
+            
             
         } else {
             setLixoTotal(getLixoTotal() - 3)
             this.score += 3;
         }
 
-        document.getElementById(this.id_score_html).innerText = `SCORE: ${this.score}`;
+        
         environment[this.posX][this.posY] = 0;
         const posicao_visual = document.getElementById(`${this.posX}-${this.posY}`)
         posicao_visual.innerText = '';
         const lixo_total_visual = document.getElementById('lixo-total')
         lixo_total_visual.innerText = `LIXO TOTAL: ${getLixoTotal()}`
+        
     }
 
 }
