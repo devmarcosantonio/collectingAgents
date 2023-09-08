@@ -40,8 +40,8 @@ class Player extends Agente {
     player_limpar () {
        const {estado_posicao_atual} = this.percepcao();
        if(estado_posicao_atual !== 0) {
-            this.limpar()
-            document.getElementById('score-player').innerText = `SCORE: ${this.score}`
+            this.limpar(estado_posicao_atual)
+            document.getElementById(this.id_score_html).innerText = `SCORE: ${this.score}`
        }
     }
 }

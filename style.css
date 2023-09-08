@@ -52,6 +52,11 @@ h1 {
     border-bottom: 1px solid black;
 }
 
+#score-player::before {
+    content: "Player";
+    font-size: 15px;
+    display: block;
+}
 
 #score-agente-simples::before {
     content: "Agente reativo simples";

@@ -46,8 +46,11 @@ function main () {
     // const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
     // const agenteObjetivo = new AgenteComObjetivo(9, 0, 'green');
     // const agenteUltilidade = new AgenteDeUltilidade(9, 9, 'orange')
-    const player = new Player(4, 4, 'yellow')
-
+    const player = new Player(4, 4, 'crimson')
+    const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
+    const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
+    const agenteObjetivo = new AgenteComObjetivo(9, 0, 'green');
+    const agenteUltilidade = new AgenteDeUltilidade(9, 9, 'orange');
     document.addEventListener("keydown", function(event) {
         if (event.key === "a") {
             player.moveTop()
@@ -73,13 +76,14 @@ function main () {
     });
     
     function executarAgentes() {
-        // agenteSimples.agir();
-        // agenteModelo.agir();
-        // agenteObjetivo.agir()
-        // agenteUltilidade.agir()
+        agenteSimples.agir();
+        agenteModelo.agir();
+        agenteObjetivo.agir()
+        agenteUltilidade.agir()
     
 
         if (getLixoTotal() <= 0) {
+
             clearInterval(intervalId);
         }
     }

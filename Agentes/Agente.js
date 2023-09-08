@@ -8,6 +8,7 @@ class Agente {
         this.id_score_html = id_score_html;
         this.agentColor = color;
         document.getElementById(`${posX}-${posY}`).style.backgroundColor = this.agentColor;
+        document.getElementById(this.id_score_html).style.color = this.agentColor;
     }
 
     percepcao() {
@@ -69,7 +70,7 @@ class Agente {
             this.score += 3;
         }
 
-        
+        document.getElementById(this.id_score_html).innerText = `SCORE: ${this.score}`
         environment[this.posX][this.posY] = 0;
         const posicao_visual = document.getElementById(`${this.posX}-${this.posY}`)
         posicao_visual.innerText = '';
