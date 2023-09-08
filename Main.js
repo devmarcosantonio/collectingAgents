@@ -1,6 +1,9 @@
 import AgenteReativoSimples from "./Agentes/AgenteReativoSimples.js";
 import AgenteComEstadosModelos from "./Agentes/AgenteComEstadosModelos.js";
+import AgenteComObjetivo from "./Agentes/AgenteComObjetivos.js";
+
 import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal} from './config.js';
+import AgenteDeUltilidade from "./Agentes/AgenteDeUltilidade.js";
 
 function define_quare () {
     const points = [0, 0, 0, 1, 3]; 
@@ -31,6 +34,8 @@ function create_environment (environment) {
         }
         environment.push(row)
     }
+    const lixo_total_visual = document.getElementById('lixo-total')
+    lixo_total_visual.innerText = `LIXO TOTAL: ${getLixoTotal()}`
 }
 
 function main () {
@@ -38,10 +43,16 @@ function main () {
 
     const agenteSimples = new AgenteReativoSimples(0, 0, 'red');
     const agenteModelo = new AgenteComEstadosModelos(0, 9, 'blue');
+    const agenteObjetivo = new AgenteComObjetivo(9, 0, 'green');
+    const agenteUltilidade = new AgenteDeUltilidade(9, 9, 'orange')
 
+    
     function executarAgentes() {
         agenteSimples.agir();
         agenteModelo.agir();
+        agenteObjetivo.agir()
+        agenteUltilidade.agir()
+    
 
         if (getLixoTotal() <= 0) {
             clearInterval(intervalId);
@@ -49,6 +60,8 @@ function main () {
     }
 
     const intervalId = setInterval(executarAgentes, 1000);
+
+    
 }
 
 main()

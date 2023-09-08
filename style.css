@@ -1,5 +1,6 @@
 body {
     background-color: rgb(43, 114, 89);
+    font-family: monospace;
 }
 
 h1 {
@@ -47,6 +48,8 @@ h1 {
 .score {
     font-size: 20px;
     font-weight: bolder;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
 }
 
 
@@ -60,4 +63,21 @@ h1 {
     content: "Agente baseado em modelo";
     font-size: 15px;
     display: block;
+}
+
+#score-agente-objetivo::before {
+    content: "Agente baseado em objetivo";
+    font-size: 15px;
+    display: block;
+}
+
+#score-agente-ultilidade::before {
+    content: "Agente baseado em ultilidade";
+    font-size: 15px;
+    display: block;
+}
+
+#lixo-total {
+    font-size: 20px;
+    font-weight: bolder;
 }

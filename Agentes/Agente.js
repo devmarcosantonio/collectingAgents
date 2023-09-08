@@ -1,10 +1,11 @@
-import { MAX_ROW, MAX_COLUMN, environment } from '../config.js';
+import { MAX_ROW, MAX_COLUMN, environment, setLixoTotal, getLixoTotal } from '../config.js';
 
 class Agente {
-    constructor(posX, posY, color) {
+    constructor(posX, posY, color, id_score_html) {
         this.posX = posX;
         this.posY = posY;
         this.score = 0;
+        this.id_score_html = id_score_html;
         this.agentColor = color;
         document.getElementById(`${posX}-${posY}`).style.backgroundColor = this.agentColor;
     }
@@ -54,6 +55,24 @@ class Agente {
             this.posX ++;
             document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor = this.agentColor;
         }
+    }
+
+    limpar (point) {
+        if (point === 1) {
+            setLixoTotal(getLixoTotal() - 1)
+            this.score ++;
+            
+        } else {
+            setLixoTotal(getLixoTotal() - 3)
+            this.score += 3;
+        }
+
+        document.getElementById(this.id_score_html).innerText = `SCORE: ${this.score}`;
+        environment[this.posX][this.posY] = 0;
+        const posicao_visual = document.getElementById(`${this.posX}-${this.posY}`)
+        posicao_visual.innerText = '';
+        const lixo_total_visual = document.getElementById('lixo-total')
+        lixo_total_visual.innerText = `LIXO TOTAL: ${getLixoTotal()}`
     }
 
 }

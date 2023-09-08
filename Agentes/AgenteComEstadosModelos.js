@@ -3,9 +3,9 @@ import { MAX_COLUMN, MAX_ROW, environment, setLixoTotal, getLixoTotal} from '../
 
 class AgenteComEstadosModelos extends Agente {
     constructor (posX, posY, color) {
-        super(posX, posY, color);
+        const id_score_html = 'score-agente-modelo';
+        super(posX, posY, color, id_score_html);
 
-        this.id_score_html = 'score-agente-modelo';
         document.getElementById(this.id_score_html).style.color = color;
 
         this.ambiente_interno = this.criarModelo()
@@ -91,18 +91,7 @@ class AgenteComEstadosModelos extends Agente {
         const {estado_posicao_atual, vizinhos} = this.percepcao()
 
         if (estado_posicao_atual === 1 || estado_posicao_atual === 3) {
-            if (estado_posicao_atual === 1) {
-                setLixoTotal(getLixoTotal() - 1)
-                this.score ++;
-                
-            } else {
-                setLixoTotal(getLixoTotal() - 3)
-                this.score += 3;
-            }
-            document.getElementById(this.id_score_html).innerText = `SCORE: ${this.score}`;
-            environment[this.posX][this.posY] = 0;
-            const posicao_visual = document.getElementById(`${this.posX}-${this.posY}`)
-            posicao_visual.innerText = '';
+            this.limpar(estado_posicao_atual)
             this.atualizarAmbienteInterno()
         } 
 
