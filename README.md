@@ -1,7 +1,7 @@
 # -collectingAgents
 Este projeto está sendo desenvolvido como parte da disciplina de Inteligência Artificial durante minha graduação. Estou animado com a oportunidade de explorar diferentes arquiteturas de agentes racionais e aplicá-las em um ambiente de coleta de itens.
 
-## Objetivo e Entusiasmo
+## Objetivo
 O principal objetivo deste projeto é criar e avaliar quatro agentes racionais, cada um com uma abordagem diferente para coletar itens no ambiente. Estou empolgado com a perspectiva de implementar essas estratégias e testá-las em confrontos para determinar qual delas é a mais eficaz.
 
 Minha motivação para este projeto vai além da necessidade acadêmica. Estou genuinamente fascinado pela inteligência artificial e sua capacidade de resolver problemas do mundo real. Acredito que esta disciplina é uma oportunidade valiosa para aprimorar minhas habilidades e aplicar os conceitos aprendidos.
