@@ -5,8 +5,7 @@ class AgenteComEstadosModelos extends Agente {
     constructor (posX, posY, color) {
         const id_score_html = 'score-agente-modelo';
         super(posX, posY, color, id_score_html);
-
-        document.getElementById(this.id_score_html).style.color = color;
+        
 
         this.ambiente_interno = this.criarModelo()
         const {vizinhos} = this.percepcao();

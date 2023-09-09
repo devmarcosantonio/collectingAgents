@@ -10,16 +10,33 @@
     <div id="container">
         <div id="scoreboard">
             <p id="lixo-total">Lixo Total: 0</p>
-            <p id="score-agente-simples" class="score">SCORE: 0</p>
-            <p id="score-agente-modelo" class="score">SCORE: 0</p>
-            <p id="score-agente-objetivo" class="score">SCORE: 0</p>
-            <p id="score-agente-ultilidade" class="score">SCORE: 0</p>
+            <p id="score-agente-simples" class="score off">SCORE: 0</p>
+            <p id="score-agente-modelo" class="score off">SCORE: 0</p>
+            <p id="score-agente-objetivo" class="score off">SCORE: 0</p>
+            <p id="score-agente-ultilidade" class="score off">SCORE: 0</p>
             
             <!-- <div id="tempo-decorrido">Tempo Decorrido: 00:00:00</div> -->
         </div>
         
         <div id="environment">
         </div>
+
+        
+        <div id="ambientes-internos">
+            <div id="div-internal-environment-agente-modelo" class="off">
+                <span>Ambiente Interno Agente baseado em modelos</span>
+                <div id="internal-environment-agente-modelo" class="internal-environment"></div>
+            </div>
+            <div id="div-internal-environment-agente-objetivo" class="off">
+                <span>Ambiente Interno Agente baseado em objetivo</span>
+                <div id="internal-environment-agente-objetivo" class="internal-environment"></div>
+            </div>
+            <div id="div-internal-environment-agente-ultilidade" class="off">
+                <span>Ambiente Interno Agente baseado em Ultilidade</span>
+                <div id="internal-environment-agente-ultilidade" class="internal-environment"></div>
+            </div>
+        </div>
+
     </div>
     <script type="module" src="Main.js"></script>
 </body>

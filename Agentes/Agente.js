@@ -7,9 +7,49 @@ class Agente {
         this.score = 0;
         this.id_score_html = id_score_html;
         this.agentColor = color;
+
+        const score = document.getElementById(this.id_score_html)
+        score.style.color = color;
+        score.classList.remove('off')
         document.getElementById(`${posX}-${posY}`).style.backgroundColor = this.agentColor;
     }
 
+    // percepcao() {
+    //     const estado_posicao_atual = environment[this.posX][this.posY];
+    //     const vizinhos = {
+    //         top: this.posY > 0 
+    //             ?   {
+    //                     estado: environment[this.posX][this.posY-1],
+    //                     ocupado: document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor !== 'white'
+    //             }
+    //             :  undefined,
+    //         bottom: this.posY < MAX_ROW - 1 
+    //             ? {
+    //                 estado: environment[this.posX][this.posY-1],
+    //                 ocupado: document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor !== 'white'
+    //             }
+    //             : undefined,
+    //         left: this.posX > 0 
+    //             ? {
+    //                 estado: environment[this.posX][this.posY-1],
+    //                 ocupado: document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor !== 'white'
+    //             }
+    //             : undefined,
+    //         right: this.posX < MAX_COLUMN - 1 
+    //             ? {
+    //                 estado: environment[this.posX][this.posY-1],
+    //                 ocupado: document.getElementById(`${this.posX}-${this.posY}`).style.backgroundColor !== 'white'
+    //             }
+    //             : undefined,
+    //     };
+    
+    //     return {
+    //         estado_posicao_atual,
+    //         vizinhos,
+    //     };
+    // }
+
+    
     percepcao() {
         const estado_posicao_atual = environment[this.posX][this.posY];
         const vizinhos = {

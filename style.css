@@ -1,3 +1,8 @@
+:root {
+    --maxRow: 20;
+    --maxCol: 20;
+}
+
 body {
     background-color: rgb(43, 114, 89);
     font-family: monospace;
@@ -8,19 +13,21 @@ h1 {
     font-family: monospace;
 }
 
+
 #container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
-    gap: 50px;
-    width: 60%;
+    width: 90%;
     margin: auto;
+    gap: 50px;
+   
 }
 
 #environment {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
-    grid-template-rows: repeat(10, 40px);
+    grid-template-columns: repeat(var(--maxCol), 1fr);
+    grid-template-rows: repeat(var(--maxRow), 25px);
     gap: 3px;
     width: 100%;
 }
@@ -30,7 +37,7 @@ h1 {
     justify-content: center;
     align-items: center;
     flex-direction: center;
-    background-color: rgb(254, 255, 255);
+    background-color: white;
     font-size: 30px;
     font-weight: bolder;
 }
@@ -38,7 +45,7 @@ h1 {
 #scoreboard {
     background-color: white;
     padding: 5px;
-    width: 250px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -48,10 +55,9 @@ h1 {
 .score {
     font-size: 20px;
     font-weight: bolder;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black;
+    border-top: 0.5px solid black;
+    border-bottom: 0.5px solid black;
 }
-
 
 #score-agente-simples::before {
     content: "Agente reativo simples";
@@ -80,4 +86,116 @@ h1 {
 #lixo-total {
     font-size: 20px;
     font-weight: bolder;
+}
+
+#ambientes-internos {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: white;
+    font-weight: bolder;
+}
+
+.internal-environment {
+    display: grid;
+    grid-template-columns: repeat(var(--maxCol), 7px);
+    grid-template-rows: repeat(var(--maxRow), 7px);
+    gap: 1px;
+}
+
+.square-ambiente-interno {
+
+    height: 100%;
+    border-radius: 1px solid black;
+
+    font-size: 15px;
+    color: black;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.off {
+    display: none;
+}
+
+@media screen and (max-width: 900px) {
+
+    #container {
+        padding: 0;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    #environment {
+        width: 80%;
+        grid-template-columns: repeat(var(--maxCol), 1fr);
+        grid-template-rows: repeat(var(--maxRow), 25px);
+    }
+
+    #scoreboard {
+        background-color: white;
+        padding: 10px;
+        width: 300px;
+     
+    }
+    
+    .square {
+        font-size: 20px;
+    }
+    
+    .score {
+        font-size: 16px;
+    }
+    
+    #lixo-total {
+        font-size: 16px;
+    }
+
+    #ambientes-internos {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        margin: auto;
+    }
+
+    #ambientes-internos > div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px
+    }
+
+    .internal-environment {
+        display: grid;
+        grid-template-columns: repeat(var(--maxCol), 10px);
+        grid-template-rows: repeat(var(--maxRow), 10px);
+        gap: 2px;
+    }
+
+    
+}
+
+
+
+@media screen and (max-width: 780px) {
+
+    #environment {width: 100%;}
+
+    
+    #ambientes-internos {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+   
+
+   
 }
