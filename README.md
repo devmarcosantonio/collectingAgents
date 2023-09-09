@@ -20,33 +20,48 @@ A simulação envolve confrontos entre os agentes, e meu objetivo é entender co
 
 Estou ansioso para compartilhar os resultados e aprendizados deste projeto com a comunidade e continuar explorando o campo fascinante da Inteligência Artificial.
 
+## Requisitos do Projeto
 
-## Atividade:
-  Implemente 4 agentes racionais, cada um seguindo uma das arquiteturas vistas em aula:
-    • Agente reativo simples (implementado);
-    • Agente com estados/modelos (implementado);
-    • Agente com objetivos; (implementado) [em revisão]
-    • Agente de utilidade. (implementado) [em revisão]
-    
-  Os agentes têm como objetivo coletar itens espalhados pelo ambiente.
-  Os agentes podem executar as seguintes ações: 
-    • Andar para esquerda; (implementado)
-    • Andar para direita; (implementado)
-    • Andar para cima; (implementado)
-    • Andar para baixo; (implementado)
-    • Pegar o item; (implementado)
-    • NoOp. "desligar". (implementado)
-    
-  Os agentes têm as seguintes percepções: 
-    • Local onde estão (x, y); (implementado)
-    • Conteúdo do local; (implementado)
-    • Conteúdo da Vizinhança-4. (cima, baixo, esquerda e direita). (implementado)
-    
-  O ambiente deve possuir dois tipos distintos de itens:
-    • Item do tipo 1: o agente recebe 1 pontos; (implementado)
-    • Item do tipo 2: o agente recebe 3 pontos. (implementado)
-    
-  A medida de desempenho dos agentes será a pontuação total de acordo com os itens coletados. 
-  Deve-se inserir dois agentes por vez no ambiente para um confronto, onde quem somar mais 
-  pontos vence.
-  Deve-se repetir as simulações até que todos os agentes tenham se enfrentado.
+### Arquiteturas de Agentes
+
+1. **Agente Reativo Simples:** Implementado.
+
+2. **Agente com Estados/Modelos:** Implementado.
+
+3. **Agente com Objetivos:** Implementado (em revisão).
+
+4. **Agente de Utilidade:** Implementado (em revisão).
+
+### Ações dos Agentes
+
+Os agentes têm as seguintes ações disponíveis:
+
+- Andar para Esquerda: Implementado.
+- Andar para Direita: Implementado.
+- Andar para Cima: Implementado.
+- Andar para Baixo: Implementado.
+- Pegar o Item: Implementado.
+- NoOp ("Desligar"): Implementado.
+
+  ### Percepções dos Agentes
+
+Os agentes possuem as seguintes percepções:
+
+- Localização (x, y): Implementado.
+- Conteúdo do Local: Implementado.
+- Conteúdo da Vizinhança-4 (cima, baixo, esquerda e direita): Implementado.
+
+### Itens no Ambiente
+
+O ambiente contém dois tipos distintos de itens:
+
+- Item do Tipo 1: O agente recebe 1 ponto ao coletá-lo; Implementado.
+- Item do Tipo 2: O agente recebe 3 pontos ao coletá-lo; Implementado.
+
+### Medida de Desempenho
+
+A medida de desempenho dos agentes é baseada na pontuação total obtida ao coletar itens. Confrontos envolvem a inserção de dois agentes no ambiente, e o vencedor é determinado com base na pontuação acumulada.
+
+### Simulações
+
+Deve-se realizar simulações até que todos os agentes tenham se enfrentado.
