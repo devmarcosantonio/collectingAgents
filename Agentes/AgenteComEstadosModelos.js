@@ -156,10 +156,7 @@ class AgenteComEstadosModelos extends Agente {
             } else {
                 this.moveTo(hist_posX_sujo, hist_posY_sujo)
             }
-           
-            
         }
-        console.log(this.ambiente_interno)
     }
 }
 
