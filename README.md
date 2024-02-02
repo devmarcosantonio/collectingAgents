@@ -1,6 +1,8 @@
 # -collectingAgents
 Este projeto está sendo desenvolvido como parte da disciplina de Inteligência Artificial durante minha graduação. Estou animado com a oportunidade de explorar diferentes arquiteturas de agentes racionais e aplicá-las em um ambiente de coleta de itens.
 
+https://devmarcosantonio.github.io/collectingAgents/
+
 ## Objetivo
 O principal objetivo deste projeto é criar e avaliar quatro agentes racionais, cada um com uma abordagem diferente para coletar itens no ambiente. Estou empolgado com a perspectiva de implementar essas estratégias e testá-las em confrontos para determinar qual delas é a mais eficaz.
 
